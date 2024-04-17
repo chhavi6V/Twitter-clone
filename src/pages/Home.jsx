@@ -24,9 +24,9 @@ export default function Home() {
 
   return (
     <div className="flex md:container mx-auto ">
-        <div className="first w-16 md:w-[70%]"><LeftSideBar/></div>
-        <div className="second w-full border-[0.5px] border-x-gray-700 border-y-gray-400"><Feed/></div>
-        <div className="third w-full bg-red-5044 hidden md:block">{userData && <RightSideBar user={userData} />}</div>
+        <div className="first w-16 md:w-[70%] hidden sm:block sm:w-1/4"><LeftSideBar/></div>
+        <div className="second sm:flex-auto sm:w-auto w-full border-[0.5px] border-x-gray-700 border-y-gray-400 "><Feed/></div>
+        <div className="third w-full hidden md:block">{userData && <RightSideBar user={userData} />}</div>
     </div>
   )
 }
