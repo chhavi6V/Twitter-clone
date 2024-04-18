@@ -1,6 +1,7 @@
 import React from 'react';
 import { sidebarData } from './LeftSideBarData'; // Corrected import statement
 import { CiEdit } from 'react-icons/ci';
+import Avatar from 'react-avatar';
 
 export default function LeftSideBar() {
     return (
@@ -37,7 +38,15 @@ export default function LeftSideBar() {
                         </button>
                     </div>
                 </li>
-            </ul>
+                <li
+                        className="flex md:justify-start items-center gap-3 justify-center mr-4 md:w-fit  hover:bg-gray-900 hover:cursor-pointer px-5 hover:rounded-full">
+                        <span className="text-3xl"><Avatar name="Jane Doe" size="30px" round={true}/></span>
+                        <div className='flex flex-col -gap-y-1'>
+                            <p className="hidden md:block font-semibold text-xl">JaneDoe</p>
+                            <p className='text-gray-500'>@janeDoe</p>
+                        </div>
+                </li>
+            </ul> 
         </div>
     )
 }

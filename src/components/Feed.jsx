@@ -10,7 +10,7 @@ export default function Feed() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://fakerapi.it/api/v1/custom?_quantity=26&name=name&description=text&like=number&id=uuid&email=email&image=image&number=counter&bookmark=counter');
+        const response = await axios.get('https://fakerapi.it/api/v1/custom?_quantity=26&name=name&description=text&like=number&id=uuid&username=pokemon&image=image&number=counter&bookmark=counter');
         setUserData(response.data.data); // Assuming the API returns an array of users and we are using the first one
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -21,7 +21,7 @@ export default function Feed() {
   }, []);
 
   return (
-    <div className='w-[100%] border border-gray-600'>
+    <div className='w-[100%] sm:max-w-[100%] border border-gray-600'>
       <CreatePost/>
       {userData && userData.map((user)=><Tweet user = {user} key={user.id} image={image}/>)}
     </div>

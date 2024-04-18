@@ -4,6 +4,15 @@ import Avatar from "react-avatar";
 import "../App.css"
 
 export default function RightSideBar({user}) {
+  function formatNumber(num) {
+    if (num >= 1000 && num <= 10000000) {
+        return (num / 1000).toFixed(1) + 'k';
+    }else if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + ' lac';
+    } else {
+        return num.toString();
+    }
+}
   let trends = user;
   return (
     <div className='search m-3 sticky top-0'>
@@ -17,7 +26,7 @@ export default function RightSideBar({user}) {
                 <div key={index} className="item p-3 hover:bg-gray-800 cursor-pointer px-3">
                     <div className="text-sm text-gray-200">Trending in India</div>
                     <div className="font-bold">#{trend.name}</div>
-                    <div className="text-sm text-gray-200">{trend.post} posts</div>
+                    <div className="text-sm text-gray-200">{formatNumber(trend.post)} posts</div>
                 </div>
           ))}
     </div>
